@@ -673,6 +673,29 @@
           ]
         ]
       }
+    ],
+    "insights-results-aggregator__list_clusters": [
+      {
+        "method": "GET",
+        "api_path": "api/insights-results-aggregator/v2",
+        "path_template": "/clusters",
+        "application": "ocp-advisor",
+        "required_v1_permissions": [
+          [
+            "ocp-advisor:recommendation-results:read"
+          ]
+        ],
+        "verified": true,
+        "openapi_sources": [
+          "https://github.com/RedHatInsights/insights-results-smart-proxy/blob/master/server/api/v2/openapi.json"
+        ],
+        "upstream": {
+          "repo": "RedHatInsights/insights-results-smart-proxy",
+          "file": "server/handlers_v2.go",
+          "handler": "getClustersView",
+          "enforcement_note": "RBAC middleware authorizes ocp-advisor recommendation-results access; handler derives org/user from the authenticated token."
+        }
+      }
     ]
   }
 }
